@@ -1,6 +1,7 @@
 version: '2'
 services:
   radikool:
+    build: .
     image: radikool6
     environment:
       radikool_id: '[ID]'
