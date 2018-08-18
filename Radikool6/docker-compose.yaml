@@ -1,14 +1,15 @@
 version: '2'
 services:
   radikool:
+    build: .
     image: radikool6
     environment:
-      radikool_id: '[ID]'
-      radikool_password: '[PASSWORD]'
+      radikool_id: ${RADIKO_ID}
+      radikool_password: ${RADIKO_PASSWORD}
       TZ: Japan
     ports:
       - "5000:5000"
     volumes:
-      - ./data/:/Radikool6/data/
-      - ./logs/:/Radikool6/logs/
-      - ./records/:/Radikool6/wwwroot/records/
+      - ~/shared/data/:/Radikool6/data/
+      - ~/shared/logs/:/Radikool6/logs/
+      - ~/shared/records/:/Radikool6/wwwroot/records/
